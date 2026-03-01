@@ -36,58 +36,109 @@ body{
 /* ================= NAVBAR ================= */
 
 .nav{
-  background: #ffffff;
-  border-bottom: 3px solid var(--brand);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  /* 半透明米色玻璃质感 */
+  background: rgba(203, 192, 174, 0.55); /* #cbc0ae with alpha */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* 轻微阴影 + 边框 */
+  border-bottom: 1px solid rgba(101, 74, 134, 0.18); /* #654a86 with alpha */
+  box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+}
+
+/* 紫色渐变细线（更高级） */
+.nav::after{
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(101,74,134,0.15), #654a86, rgba(101,74,134,0.15));
 }
 
 .nav-inner{
   width: min(1000px, 92vw);
   margin: 0 auto;
-  padding: 16px 0;
+  padding: 12px 0;
   display: flex;
   align-items: center;
+  gap: 14px;
 }
 
+/* Brand：更像“徽标” */
 .brand{
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.2px;
   color: var(--brand);
   text-decoration: none;
-  display: flex;
+
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+
+  padding: 8px 12px;
+  border-radius: 999px;
+
+  background: rgba(248,245,239,0.70); /* card色半透明 */
+  border: 1px solid rgba(101, 74, 134, 0.18);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
 }
 
+/* Dot：更精致 */
 .brand .dot{
   width: 10px;
   height: 10px;
-  border-radius: 50%;
-  background: var(--brand);
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #ffffff, var(--brand));
+  box-shadow: 0 0 0 3px rgba(101,74,134,0.12);
 }
 
+/* Links：胶囊按钮风格 */
 .links{
   margin-left: auto;
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .links a{
   text-decoration: none;
-  padding: 6px 14px;
-  border-radius: 20px;
   color: var(--brand);
-  font-weight: 500;
-  transition: 0.25s ease;
+  font-weight: 600;
+  font-size: 14px;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  background: rgba(248,245,239,0.55);
+  border: 1px solid rgba(101, 74, 134, 0.16);
+
+  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
 }
 
+/* Hover：轻微抬起 */
 .links a:hover{
-  background: var(--brand-light);
-  color: white;
+  transform: translateY(-1px);
+  background: rgba(138, 115, 168, 0.22); /* 浅紫 */
+  box-shadow: 0 10px 18px rgba(0,0,0,0.08);
 }
 
+/* Active：紫色实心按钮 */
 .links a.active{
-  background: var(--brand);
-  color: white;
+  color: #fff;
+  background: linear-gradient(135deg, #654a86, #8a73a8);
+  border-color: rgba(101, 74, 134, 0.30);
+  box-shadow: 0 12px 22px rgba(101,74,134,0.22);
+}
+
+/* 小屏优化：导航更紧凑 */
+@media (max-width: 720px){
+  .nav-inner{ padding: 10px 0; }
+  .brand{ padding: 7px 10px; font-size: 15px; }
+  .links a{ padding: 7px 12px; font-size: 13px; }
 }
 
 /* ================= 卡片 ================= */
