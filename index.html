@@ -3,8 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>cheminlife</title>
+  <title>Chem In Life 生活中的化学</title>
   <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    /* 首页视频横排区域 */
+    .video-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .video-card {
+      width: 180px;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .video-card img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: 0.2s ease;
+    }
+
+    .video-card img:hover {
+      transform: scale(1.05);
+      border-color: rgba(122,167,255,0.6);
+    }
+
+    .video-title {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -14,7 +50,7 @@
     <div class="nav-inner">
       <a class="brand" href="index.html">
         <span class="dot"></span>
-        Chem_in_life
+        Chem_In_Life
       </a>
 
       <nav class="links">
@@ -61,11 +97,41 @@
 
       </div>
 
+      <!-- 视频快速跳转 -->
+      <div class="video-row">
+
+        <a class="video-card" href="video1.html">
+          <img src="assets/thumb1.jpg" alt="">
+          <div class="video-title">84消毒液 + 洁厕灵</div>
+        </a>
+
+        <a class="video-card" href="video2.html">
+          <img src="assets/thumb2.jpg" alt="">
+          <div class="video-title">高锰酸钾 + 醋</div>
+        </a>
+
+        <a class="video-card" href="video3.html">
+          <img src="assets/thumb3.jpg" alt="">
+          <div class="video-title">双氧水 + 醋</div>
+        </a>
+
+        <a class="video-card" href="video4.html">
+          <img src="assets/thumb4.jpg" alt="">
+          <div class="video-title">84消毒液 + 酒精</div>
+        </a>
+
+        <a class="video-card" href="video5.html">
+          <img src="assets/thumb5.jpg" alt="">
+          <div class="video-title">高锰酸钾 + 酒精</div>
+        </a>
+
+      </div>
+
     </section>
 
-    <!-- footer -->
+    <!-- Footer -->
     <div class="footer">
-      © cheminlife | IB MYP Community Project
+      © Chem_In_Life | IB MYP Community Project
     </div>
 
   </main>
