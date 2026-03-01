@@ -1,192 +1,152 @@
+/* =========================
+   Chem_In_Life - Custom Beige & Purple Theme
+   Beige:  #cbc0ae
+   Purple: #654a86
+   ========================= */
+
 :root{
-  --bg: #0b1020;
-  --card: rgba(255,255,255,0.06);
-  --card2: rgba(255,255,255,0.10);
-  --text: #eaf0ff;
-  --muted: rgba(234,240,255,0.75);
-  --brand: #7aa7ff;
-  --brand2: #68e6c2;
-  --border: rgba(255,255,255,0.14);
-  --shadow: 0 14px 40px rgba(0,0,0,0.35);
-  --radius: 18px;
+  --bg: #cbc0ae;        /* 主背景米色 */
+  --card: #f8f5ef;      /* 浅暖白卡片 */
+  --text: #3a2f2a;      /* 深棕文字 */
+  --muted: #6b5e57;     /* 次级文字 */
+  --brand: #654a86;     /* 主紫色 */
+  --brand-light: #8a73a8; /* 浅紫（自动调亮） */
+  --border: #e4dbcf;    /* 卡片边框 */
+  --shadow: 0 6px 18px rgba(0,0,0,0.08);
+  --radius: 14px;
 }
 
-/* 基础重置 */
+/* 基础 */
 *{ box-sizing: border-box; }
-html, body{ height: 100%; }
+
 body{
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
   color: var(--text);
-  background:
-    radial-gradient(900px 500px at 20% 10%, rgba(122,167,255,0.25), transparent 60%),
-    radial-gradient(700px 420px at 80% 15%, rgba(104,230,194,0.18), transparent 55%),
-    radial-gradient(700px 500px at 50% 100%, rgba(122,167,255,0.12), transparent 60%),
-    var(--bg);
 }
 
 /* 容器 */
 .container{
-  width: min(980px, 92vw);
+  width: min(1000px, 92vw);
   margin: 0 auto;
-  padding: 20px 0 46px;
+  padding: 30px 0 60px;
 }
 
-/* 顶部导航 */
+/* ================= NAVBAR ================= */
+
 .nav{
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  backdrop-filter: blur(10px);
-  background: rgba(11,16,32,0.70);
-  border-bottom: 1px solid var(--border);
+  background: #ffffff;
+  border-bottom: 3px solid var(--brand);
 }
 
 .nav-inner{
-  width: min(980px, 92vw);
+  width: min(1000px, 92vw);
   margin: 0 auto;
-  padding: 14px 0;
+  padding: 16px 0;
   display: flex;
   align-items: center;
-  gap: 14px;
 }
 
-/* 品牌 */
 .brand{
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--brand);
   text-decoration: none;
-  color: var(--text);
-  font-weight: 800;
-  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
+
 .brand .dot{
   width: 10px;
   height: 10px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--brand), var(--brand2));
-  box-shadow: 0 0 18px rgba(122,167,255,0.6);
-}
-.brand small{
-  color: var(--muted);
-  font-weight: 600;
+  border-radius: 50%;
+  background: var(--brand);
 }
 
-/* 导航链接 */
 .links{
   margin-left: auto;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
 }
+
 .links a{
-  color: var(--muted);
   text-decoration: none;
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  transition: 0.15s ease;
-  font-weight: 600;
-  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: var(--brand);
+  font-weight: 500;
+  transition: 0.25s ease;
 }
+
 .links a:hover{
-  color: var(--text);
-  border-color: var(--border);
-  background: rgba(255,255,255,0.05);
+  background: var(--brand-light);
+  color: white;
 }
+
 .links a.active{
-  color: var(--text);
-  border-color: rgba(122,167,255,0.45);
-  background: rgba(122,167,255,0.12);
+  background: var(--brand);
+  color: white;
 }
 
-/* 卡片 */
+/* ================= 卡片 ================= */
+
 .card{
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.03));
+  background: var(--card);
   border-radius: var(--radius);
+  padding: 35px;
   box-shadow: var(--shadow);
-  padding: 18px;
+  border: 1px solid var(--border);
 }
 
-/* 标题区 */
-.hero{
-  padding: 18px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(122,167,255,0.14), rgba(255,255,255,0.03));
-  box-shadow: var(--shadow);
-}
+/* 标题 */
 
 h1{
-  margin: 0 0 8px;
-  font-size: clamp(22px, 4vw, 34px);
-}
-p{
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.6;
+  color: var(--brand);
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
-/* 视频播放器 */
+/* 段落 */
+
+p{
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ================= 视频播放器 ================= */
+
 .video-wrap{
-  margin-top: 16px;
-  overflow: hidden;
+  margin-top: 20px;
   border-radius: var(--radius);
+  overflow: hidden;
   border: 1px solid var(--border);
-  background: rgba(255,255,255,0.05);
 }
 
 video{
   width: 100%;
-  height: auto;
   display: block;
-  background: #000;
 }
 
-/* 列表 */
-.grid{
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 14px;
-  margin-top: 16px;
+/* ================= 首页视频缩略图 ================= */
+
+.video-card img{
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: 0.25s ease;
 }
 
-.tile{
-  grid-column: span 6;
-  padding: 16px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--card2), rgba(255,255,255,0.03));
-  text-decoration: none;
-  color: var(--text);
-  transition: 0.15s ease;
-}
-.tile:hover{
-  transform: translateY(-2px);
-  border-color: rgba(122,167,255,0.45);
+.video-card img:hover{
+  border-color: var(--brand);
+  transform: scale(1.05);
 }
 
-.tile h3{
-  margin: 0 0 6px;
-  font-size: 16px;
-}
-.tile p{
-  margin: 0;
-  font-size: 14px;
-}
+/* ================= Footer ================= */
 
-/* 页脚 */
 .footer{
-  margin-top: 22px;
-  color: rgba(234,240,255,0.55);
-  font-size: 13px;
   text-align: center;
-}
-
-/* 手机端：卡片变一列 */
-@media (max-width: 720px){
-  .tile{ grid-column: span 12; }
-  .links a{ font-size: 13px; padding: 7px 9px; }
+  margin-top: 50px;
+  font-size: 14px;
+  color: var(--muted);
 }
