@@ -171,48 +171,91 @@ p{
   margin:15px auto;
 }
 
-/* =====================================================
-   视频链接区
-   ===================================================== */
+/* ===============================
+   FIX: Quick links (5 video links)
+   =============================== */
 
-.link-list{
-  max-width:900px;
-  margin:25px auto 0;
-  display:grid;
-  gap:12px;
-  text-align:center;
+/* 兼容：如果你有 link-list 就用它；如果没有，也能用 #quick-links/.quick-links/.video-links */
+.link-list,
+#quick-links,
+.quick-links,
+.video-links{
+  max-width: 900px;
+  margin: 26px auto 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  text-align: center;
 }
 
-.link-list a{
-  display:inline-block;
-  padding:12px 18px;
-  border-radius:14px;
+/* ✅ 关键：把“这类链接区域里的 a”变成按钮卡片 */
+.link-list a,
+#quick-links a,
+.quick-links a,
+.video-links a{
+  display: inline-block;
+  width: min(860px, 100%);
+  margin: 0 auto;
 
-  background:rgba(214,236,235,0.45);
-  border:1px solid rgba(31,111,120,0.18);
-  color:var(--primary-dark);
+  padding: 14px 18px;
+  border-radius: 14px;
 
-  font-weight:600;
-  transition:var(--transition);
+  background: rgba(214,236,235,0.50);
+  border: 1px solid rgba(31,111,120,0.22);
+
+  color: var(--primary-dark);
+  font-weight: 650;
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-.link-list a:hover{
-  background:rgba(44,166,164,0.18);
-  border-color:rgba(44,166,164,0.4);
-  transform:translateY(-2px);
+.link-list a:hover,
+#quick-links a:hover,
+.quick-links a:hover,
+.video-links a:hover{
+  background: rgba(44,166,164,0.18);
+  border-color: rgba(44,166,164,0.45);
+  transform: translateY(-2px);
 }
 
-/* =====================================================
-   Footer
-   ===================================================== */
+/* 如果你的链接现在被包在 h2/h3/p 里导致间距巨大，压一压 */
+.link-list > * ,
+#quick-links > * ,
+.quick-links > * ,
+.video-links > * {
+  margin: 0 !important;
+}
 
-footer{
-  margin-top:60px;
-  padding:30px 20px;
-  text-align:center;
-  background:var(--primary-dark);
-  color:#E0F4F3;
-  font-size:14px;
+/* ===============================
+   FIX: Footer (works for <footer> and .footer)
+   =============================== */
+
+footer,
+.footer{
+  margin-top: 60px;
+  padding: 26px 18px;
+  text-align: center;
+
+  background: var(--primary-dark);
+  color: #E0F4F3;
+
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+/* footer 内文字 */
+footer p,
+.footer p{
+  margin: 0;
+  color: #E0F4F3;
+  font-size: 14px;
+}
+
+/* 如果你 footer 里用了 a，也保持一致 */
+footer a,
+.footer a{
+  color: #E0F4F3;
+  text-decoration: underline;
 }
 
 /* =====================================================
