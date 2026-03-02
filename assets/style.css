@@ -1,33 +1,29 @@
 /* =====================================================
    Chem_In_Life
-   Elegant Beige + Refined Purple System
+   Elegant Navy Blue + Beige Theme
    ===================================================== */
-
-/* ================== 颜色系统 ================== */
 
 :root{
   /* 背景体系 */
-  --bg: #cbc0ae;          /* 主背景米色 */
-  --card: #f8f5ef;        /* 卡片暖白 */
-  --border: #e4dbcf;      /* 边框色 */
+  --bg: #d6c6b0;          /* Beige */
+  --card: #f4efe8;        /* 暖白卡片 */
+  --border: #e5dacb;
   --shadow: 0 8px 22px rgba(0,0,0,0.08);
   --radius: 16px;
 
-  /* 三层紫色文字体系 */
-  --heading: #2a1f3a;     /* 标题层 */
-  --text: #3b2952;        /* 正文层 */
-  --muted: #7c6a99;       /* 次级说明层 */
+  /* 文字体系 */
+  --heading: #1f2a44;     /* Navy */
+  --text: #2d3655;        /* 深蓝正文 */
+  --muted: #6a6f84;       /* 次级文字 */
 
-  /* 品牌紫 */
-  --brand: #654a86;       /* 主紫 */
-  --brand-light: #8a73a8; /* hover紫 */
+  /* 品牌色 */
+  --brand: #1f2a44;       /* 主Navy */
+  --brand-light: #2f3c63; /* Hover */
 }
 
-/* ================== 全局基础 ================== */
+/* ================= 基础 ================= */
 
-*{
-  box-sizing: border-box;
-}
+*{ box-sizing: border-box; }
 
 body{
   margin: 0;
@@ -36,39 +32,22 @@ body{
   color: var(--text);
 }
 
-/* 容器 */
 .container{
   width: min(1100px, 92vw);
   margin: 0 auto;
   padding: 40px 0 70px;
 }
 
-/* ================== Navbar（升级版） ================== */
+/* ================= NAVBAR ================= */
 
 .nav{
   position: sticky;
   top: 0;
   z-index: 100;
-
-  background: rgba(203, 192, 174, 0.55);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  border-bottom: 1px solid rgba(101, 74, 134, 0.25);
-  box-shadow: 0 12px 30px rgba(101,74,134,0.08);
-}
-
-/* 底部渐变紫色线 */
-.nav::after{
-  content: "";
-  display: block;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    rgba(101,74,134,0.15),
-    var(--brand),
-    rgba(101,74,134,0.15)
-  );
+  background: rgba(214, 198, 176, 0.65);
+  backdrop-filter: blur(10px);
+  border-bottom: 3px solid var(--brand);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 .nav-inner{
@@ -80,40 +59,32 @@ body{
   gap: 16px;
 }
 
-/* Brand */
 .brand{
   font-weight: 800;
   font-size: 16px;
-  letter-spacing: 0.3px;
   color: var(--brand);
   text-decoration: none;
-
   display: inline-flex;
   align-items: center;
   gap: 10px;
-
   padding: 8px 14px;
   border-radius: 999px;
-
-  background: rgba(248,245,239,0.75);
-  border: 1px solid rgba(101,74,134,0.18);
-  box-shadow: 0 8px 18px rgba(101,74,134,0.08);
+  background: #ffffff;
+  border: 1px solid rgba(31,42,68,0.2);
 }
 
 .brand .dot{
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #ffffff, var(--brand));
-  box-shadow: 0 0 0 3px rgba(101,74,134,0.15);
+  background: var(--brand);
 }
 
-/* Links */
 .links{
   margin-left: auto;
   display: flex;
-  flex-wrap: wrap;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .links a{
@@ -121,32 +92,24 @@ body{
   font-weight: 600;
   font-size: 14px;
   color: var(--brand);
-
   padding: 8px 16px;
   border-radius: 999px;
-
-  background: rgba(248,245,239,0.6);
-  border: 1px solid rgba(101,74,134,0.18);
-
-  transition: all 0.2s ease;
+  border: 1px solid rgba(31,42,68,0.2);
+  background: #ffffff;
+  transition: 0.2s ease;
 }
 
-/* Hover */
 .links a:hover{
-  transform: translateY(-1px);
   background: var(--brand-light);
   color: white;
-  box-shadow: 0 10px 20px rgba(101,74,134,0.15);
 }
 
-/* Active */
 .links a.active{
-  background: linear-gradient(135deg, var(--brand), var(--brand-light));
+  background: var(--brand);
   color: white;
-  box-shadow: 0 12px 25px rgba(101,74,134,0.25);
 }
 
-/* ================== 卡片 ================== */
+/* ================= 卡片 ================= */
 
 .card{
   background: var(--card);
@@ -156,7 +119,7 @@ body{
   box-shadow: var(--shadow);
 }
 
-/* ================== 标题体系 ================== */
+/* ================= 标题 ================= */
 
 h1{
   color: var(--heading);
@@ -164,20 +127,21 @@ h1{
   margin-bottom: 25px;
 }
 
+/* ================= 正文 ================= */
+
 p{
   color: var(--muted);
   line-height: 1.8;
   font-size: 15px;
 }
 
-/* ================== 视频播放器 ================== */
+/* ================= 视频播放器 ================= */
 
 .video-wrap{
   margin-top: 25px;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: 0 10px 25px rgba(101,74,134,0.08);
 }
 
 video{
@@ -185,7 +149,7 @@ video{
   display: block;
 }
 
-/* ================== 首页视频缩略图 ================== */
+/* ================= 首页视频卡片 ================= */
 
 .video-row{
   display: flex;
@@ -206,13 +170,12 @@ video{
   width: 100%;
   border-radius: 14px;
   border: 2px solid transparent;
-  transition: all 0.25s ease;
-  box-shadow: 0 8px 18px rgba(101,74,134,0.12);
+  transition: 0.25s ease;
 }
 
 .video-card img:hover{
   border-color: var(--brand);
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .video-title{
@@ -221,7 +184,14 @@ video{
   color: var(--text);
 }
 
-/* ================== Footer ================== */
+.video-en{
+  display:block;
+  font-size:12px;
+  margin-top:4px;
+  color:var(--muted);
+}
+
+/* ================= Footer ================= */
 
 .footer{
   text-align: center;
@@ -230,21 +200,9 @@ video{
   color: var(--muted);
 }
 
-/* ================== 响应式优化 ================== */
+/* ================= 响应式 ================= */
 
 @media (max-width: 768px){
-
-  .card{
-    padding: 30px;
-  }
-
-  .links a{
-    font-size: 13px;
-    padding: 7px 13px;
-  }
-
-  h1{
-    font-size: 26px;
-  }
-
+  .card{ padding: 30px; }
+  h1{ font-size: 26px; }
 }
