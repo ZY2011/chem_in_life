@@ -1,208 +1,220 @@
-/* =====================================================
-   Chem_In_Life
-   Elegant Navy Blue + Beige Theme
-   ===================================================== */
+/* ===============================
+   Chem In Life - Beige + Teal Theme
+   =============================== */
 
-:root{
-  /* 背景体系 */
-  --bg: #d6c6b0;          /* Beige */
-  --card: #f4efe8;        /* 暖白卡片 */
-  --border: #e5dacb;
-  --shadow: 0 8px 22px rgba(0,0,0,0.08);
-  --radius: 16px;
+:root {
 
-  /* 文字体系 */
-  --heading: #1f2a44;     /* Navy */
-  --text: #2d3655;        /* 深蓝正文 */
-  --muted: #6a6f84;       /* 次级文字 */
+  /* ===== 背景色 ===== */
+  --bg-main: #F4EEE6;
+  --bg-soft: #E9DFD3;
+  --bg-card: #FFFFFF;
 
-  /* 品牌色 */
-  --brand: #1f2a44;       /* 主Navy */
-  --brand-light: #2f3c63; /* Hover */
+  /* ===== 主色（墨青）===== */
+  --primary: #1F6F78;
+  --primary-dark: #155A60;
+  --primary-light: #2CA6A4;
+
+  /* ===== 辅助色 ===== */
+  --accent: #3AAFA9;
+  --accent-soft: #D6ECEB;
+
+  /* ===== 文字 ===== */
+  --text-dark: #2B2B2B;
+  --text-medium: #5A5A5A;
+  --text-light: #8C8C8C;
+
+  /* ===== 其他 ===== */
+  --border-light: #DDD4C8;
+  --shadow-soft: 0 8px 20px rgba(31, 111, 120, 0.08);
+  --radius: 14px;
+  --transition: 0.3s ease;
 }
 
-/* ================= 基础 ================= */
+/* ===============================
+   全局
+   =============================== */
 
-*{ box-sizing: border-box; }
-
-body{
+* {
   margin: 0;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container{
-  width: min(1100px, 92vw);
-  margin: 0 auto;
-  padding: 40px 0 70px;
+body {
+  background-color: var(--bg-main);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-/* ================= NAVBAR ================= */
+/* ===============================
+   Navbar
+   =============================== */
 
-.nav{
+.navbar {
+  background-color: var(--bg-main);
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-soft);
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(214, 198, 176, 0.65);
-  backdrop-filter: blur(10px);
-  border-bottom: 3px solid var(--brand);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  z-index: 1000;
 }
 
-.nav-inner{
-  width: min(1100px, 92vw);
-  margin: 0 auto;
-  padding: 14px 0;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.brand{
-  font-weight: 800;
-  font-size: 16px;
-  color: var(--brand);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: #ffffff;
-  border: 1px solid rgba(31,42,68,0.2);
-}
-
-.brand .dot{
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--brand);
-}
-
-.links{
-  margin-left: auto;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.links a{
-  text-decoration: none;
+.navbar-logo {
+  font-size: 22px;
   font-weight: 600;
-  font-size: 14px;
-  color: var(--brand);
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(31,42,68,0.2);
-  background: #ffffff;
-  transition: 0.2s ease;
+  color: var(--primary);
+  letter-spacing: 1px;
 }
 
-.links a:hover{
-  background: var(--brand-light);
+.navbar-links a {
+  text-decoration: none;
+  margin-left: 30px;
+  color: var(--primary);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.navbar-links a:hover {
+  color: var(--primary-light);
+}
+
+/* ===============================
+   Hero Section
+   =============================== */
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: var(--text-medium);
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+/* ===============================
+   按钮
+   =============================== */
+
+.button-primary {
+  background-color: var(--primary);
   color: white;
-}
-
-.links a.active{
-  background: var(--brand);
-  color: white;
-}
-
-/* ================= 卡片 ================= */
-
-.card{
-  background: var(--card);
+  padding: 12px 28px;
   border-radius: var(--radius);
-  padding: 45px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
 }
 
-/* ================= 标题 ================= */
-
-h1{
-  color: var(--heading);
-  font-size: 32px;
-  margin-bottom: 25px;
+.button-primary:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-3px);
 }
 
-/* ================= 正文 ================= */
+/* ===============================
+   视频卡片区域
+   =============================== */
 
-p{
-  color: var(--muted);
-  line-height: 1.8;
-  font-size: 15px;
+.section {
+  padding: 80px 60px;
 }
 
-/* ================= 视频播放器 ================= */
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  color: var(--primary-dark);
+  margin-bottom: 50px;
+}
 
-.video-wrap{
-  margin-top: 25px;
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.video-card {
+  background-color: var(--bg-card);
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+  cursor: pointer;
 }
 
-video{
+.video-card:hover {
+  transform: translateY(-6px);
+}
+
+.video-card img {
   width: 100%;
   display: block;
 }
 
-/* ================= 首页视频卡片 ================= */
-
-.video-row{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 22px;
-  margin-top: 50px;
+.video-card h3 {
+  padding: 18px;
+  font-size: 16px;
+  color: var(--primary);
 }
 
-.video-card{
-  width: 180px;
+/* ===============================
+   Card Section
+   =============================== */
+
+.card {
+  background-color: var(--bg-card);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 30px;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+
+.footer {
+  background-color: var(--primary-dark);
+  color: white;
   text-align: center;
-  text-decoration: none;
-  color: inherit;
+  padding: 30px;
+  margin-top: 80px;
 }
 
-.video-card img{
-  width: 100%;
-  border-radius: 14px;
-  border: 2px solid transparent;
-  transition: 0.25s ease;
-}
-
-.video-card img:hover{
-  border-color: var(--brand);
-  transform: scale(1.05);
-}
-
-.video-title{
-  margin-top: 10px;
+.footer p {
+  color: #E0F4F3;
   font-size: 14px;
-  color: var(--text);
 }
 
-.video-en{
-  display:block;
-  font-size:12px;
-  margin-top:4px;
-  color:var(--muted);
-}
+/* ===============================
+   响应式
+   =============================== */
 
-/* ================= Footer ================= */
+@media (max-width: 768px) {
 
-.footer{
-  text-align: center;
-  margin-top: 60px;
-  font-size: 14px;
-  color: var(--muted);
-}
+  .navbar {
+    padding: 15px 20px;
+  }
 
-/* ================= 响应式 ================= */
+  .section {
+    padding: 60px 20px;
+  }
 
-@media (max-width: 768px){
-  .card{ padding: 30px; }
-  h1{ font-size: 26px; }
+  .hero h1 {
+    font-size: 34px;
+  }
+
 }
