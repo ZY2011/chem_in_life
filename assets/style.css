@@ -7,14 +7,14 @@
   --bg-main:#F4EEE6;
   --bg-soft:#E9DFD3;
   --bg-card:#FFFFFF;
+   
+  --text-dark:#2F4F54;     /* 主文字（带青） */
+  --text-medium:#4F6E73;   /* 次文字 */
+  --text-light:#7C9B9F;    /* 辅助文字 */
 
   --primary:#1F6F78;
   --primary-dark:#155A60;
   --primary-light:#2CA6A4;
-
-  --text-dark:#2B2B2B;
-  --text-medium:#5A5A5A;
-  --text-light:#8C8C8C;
 
   --border-light:#DDD4C8;
   --shadow-soft:0 10px 30px rgba(31,111,120,0.08);
