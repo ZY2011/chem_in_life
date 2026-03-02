@@ -1,166 +1,242 @@
-/* ===============================
-   Chem In Life - Beige + Teal Theme (Robust)
-   =============================== */
+/* =====================================================
+   Chem In Life - Beige + Deep Teal Elegant Theme
+   ===================================================== */
 
-:root {
-  --bg-main: #F4EEE6;
-  --bg-soft: #E9DFD3;
-  --bg-card: #FFFFFF;
+/* ========= 颜色变量 ========= */
+:root{
+  --bg-main:#F4EEE6;
+  --bg-soft:#E9DFD3;
+  --bg-card:#FFFFFF;
 
-  --primary: #1F6F78;
-  --primary-dark: #155A60;
-  --primary-light: #2CA6A4;
+  --primary:#1F6F78;
+  --primary-dark:#155A60;
+  --primary-light:#2CA6A4;
 
-  --accent: #3AAFA9;
-  --accent-soft: #D6ECEB;
+  --text-dark:#2B2B2B;
+  --text-medium:#5A5A5A;
+  --text-light:#8C8C8C;
 
-  --text-dark: #2B2B2B;
-  --text-medium: #5A5A5A;
-  --text-light: #8C8C8C;
+  --border-light:#DDD4C8;
+  --shadow-soft:0 10px 30px rgba(31,111,120,0.08);
 
-  --border-light: #DDD4C8;
-  --shadow-soft: 0 8px 20px rgba(31, 111, 120, 0.08);
-  --radius: 14px;
-  --transition: 0.25s ease;
+  --radius:16px;
+  --transition:0.25s ease;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  background: var(--bg-main);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  color: var(--text-dark);
-  line-height: 1.6;
+/* ========= 全局重置 ========= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* ✅ 关键：全站链接重置（你截图里蓝色下划线就是这里没处理） */
-a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: var(--transition);
-}
-a:hover { color: var(--primary-light); }
-
-/* ===============================
-   ✅ Navbar（兼容 nav / .navbar / ul-li）
-   =============================== */
-
-/* 兼容：你用 nav 标签 或 div.navbar 都能吃到 */
-nav, .navbar {
-  background: rgba(244, 238, 230, 0.92);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 18px;
-
-  padding: 14px 28px;
-  box-shadow: var(--shadow-soft);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  border-bottom: 1px solid rgba(31, 111, 120, 0.10);
+body{
+  background:var(--bg-main);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+               "PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+  color:var(--text-dark);
+  line-height:1.7;
 }
 
-/* 兼容：logo 可能是 h1 / div / a */
-nav .logo, .navbar .navbar-logo, nav > a:first-child, .navbar > a:first-child {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: var(--primary-dark);
+/* 全局链接修复（防止蓝色下划线） */
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
-/* 兼容：ul/li 导航 */
-nav ul, .navbar ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 0;
-  padding: 0;
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
+header.nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:rgba(244,238,230,0.95);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+
+  border-bottom:1px solid rgba(31,111,120,0.12);
+  box-shadow:var(--shadow-soft);
 }
 
-/* 兼容：a 直接在 nav 里排列（你截图就是这种） */
-nav a, .navbar a {
-  font-weight: 600;
-  padding: 8px 10px;
-  border-radius: 10px;
+.nav .nav-inner{
+  max-width:1100px;
+  margin:0 auto;
+  padding:14px 24px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
 
-/* hover 更精致一点 */
-nav a:hover, .navbar a:hover {
-  background: rgba(44, 166, 164, 0.10);
+/* 品牌 */
+.nav .brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:0.5px;
+  color:var(--primary-dark);
+  white-space:nowrap;
 }
 
-/* ===============================
-   Main container / card（让内容不要“顶到边”）
-   =============================== */
-
-.container {
-  max-width: 1100px;
-  margin: 26px auto;
-  padding: 36px 28px;
-  background: var(--bg-card);
-  border-radius: 18px;
-  box-shadow: var(--shadow-soft);
+/* 品牌小圆点 */
+.nav .brand .dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--primary);
+  box-shadow:0 0 0 6px rgba(44,166,164,0.15);
 }
 
-/* 标题区 */
-h1 {
-  text-align: center;
-  font-size: 44px;
-  color: var(--primary-dark);
-  margin-bottom: 18px;
-}
-h2 {
-  text-align: center;
-  font-size: 20px;
-  color: var(--text-medium);
-  margin-top: 24px;
-  margin-bottom: 12px;
+/* 链接区域 */
+.nav nav.links{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
 }
 
-/* 正文 */
-p {
-  color: var(--text-medium);
-  max-width: 820px;
-  margin: 10px auto;
-  text-align: center;
+/* 每个导航链接 */
+.nav nav.links a{
+  font-size:14px;
+  font-weight:650;
+  padding:8px 14px;
+  border-radius:999px;
+
+  color:var(--primary);
+  border:1px solid transparent;
+  transition:var(--transition);
 }
 
-/* 列表/链接区（你 supervisor 下那一堆链接） */
-.link-list {
-  max-width: 900px;
-  margin: 18px auto 0;
-  display: grid;
-  gap: 10px;
-  text-align: center;
-}
-.link-list a {
-  display: inline-block;
-  padding: 10px 14px;
-  border: 1px solid rgba(31, 111, 120, 0.18);
-  background: rgba(214, 236, 235, 0.45);
-  border-radius: 12px;
-}
-.link-list a:hover {
-  background: rgba(44, 166, 164, 0.18);
-  border-color: rgba(44, 166, 164, 0.35);
+/* hover */
+.nav nav.links a:hover{
+  background:rgba(44,166,164,0.12);
+  border-color:rgba(44,166,164,0.25);
+  transform:translateY(-1px);
 }
 
-/* Footer */
-footer, .footer {
-  margin-top: 40px;
-  padding: 26px 18px;
-  text-align: center;
-  background: var(--primary-dark);
-  color: #E0F4F3;
+/* 当前页 */
+.nav nav.links a.active{
+  background:rgba(31,111,120,0.12);
+  border-color:rgba(31,111,120,0.3);
+  color:var(--primary-dark);
 }
 
-/* 响应式 */
-@media (max-width: 768px) {
-  nav, .navbar { padding: 12px 14px; flex-wrap: wrap; }
-  h1 { font-size: 32px; }
-  .container { margin: 16px; padding: 24px 16px; }
+/* =====================================================
+   主容器
+   ===================================================== */
+
+.container{
+  max-width:1000px;
+  margin:40px auto;
+  padding:60px 40px;
+
+  background:var(--bg-card);
+  border-radius:24px;
+  box-shadow:var(--shadow-soft);
+}
+
+/* 标题 */
+h1{
+  text-align:center;
+  font-size:46px;
+  color:var(--primary-dark);
+  margin-bottom:25px;
+}
+
+h2{
+  text-align:center;
+  font-size:20px;
+  color:var(--text-medium);
+  margin:30px 0 10px;
+}
+
+h3{
+  text-align:center;
+  font-size:18px;
+  margin-top:30px;
+}
+
+/* 段落 */
+p{
+  text-align:center;
+  color:var(--text-medium);
+  max-width:800px;
+  margin:15px auto;
+}
+
+/* =====================================================
+   视频链接区
+   ===================================================== */
+
+.link-list{
+  max-width:900px;
+  margin:25px auto 0;
+  display:grid;
+  gap:12px;
+  text-align:center;
+}
+
+.link-list a{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:14px;
+
+  background:rgba(214,236,235,0.45);
+  border:1px solid rgba(31,111,120,0.18);
+  color:var(--primary-dark);
+
+  font-weight:600;
+  transition:var(--transition);
+}
+
+.link-list a:hover{
+  background:rgba(44,166,164,0.18);
+  border-color:rgba(44,166,164,0.4);
+  transform:translateY(-2px);
+}
+
+/* =====================================================
+   Footer
+   ===================================================== */
+
+footer{
+  margin-top:60px;
+  padding:30px 20px;
+  text-align:center;
+  background:var(--primary-dark);
+  color:#E0F4F3;
+  font-size:14px;
+}
+
+/* =====================================================
+   响应式
+   ===================================================== */
+
+@media (max-width:768px){
+
+  .nav .nav-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .nav nav.links{
+    width:100%;
+    justify-content:flex-start;
+  }
+
+  .container{
+    margin:20px;
+    padding:40px 20px;
+  }
+
+  h1{
+    font-size:32px;
+  }
 }
