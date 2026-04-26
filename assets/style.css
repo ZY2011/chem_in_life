@@ -183,7 +183,7 @@ p{
 }
 
 /* =====================================================
-   视频容器样式
+   视频容器样式 - 统一的响应式设计
    ===================================================== */
 
 .video-wrap{
@@ -191,18 +191,41 @@ p{
   width:100%;
   max-width:800px;
   margin:20px auto 30px;
-  padding-top:56.25%; /* 16:9 比例 */
   overflow:hidden;
   border-radius:12px;
   box-shadow:var(--shadow-soft);
 }
 
-.video-wrap video{
+/* 使用现代 aspect-ratio 属性 + 降级方案 */
+.video-wrap{
+  aspect-ratio: 16 / 9;
+}
+
+/* 兼容旧浏览器的降级方案 */
+@supports not (aspect-ratio: 16 / 9) {
+  .video-wrap{
+    padding-top: 56.25%;
+    height: 0;
+  }
+}
+
+/* B站iframe容器 */
+.video-wrap .bilibili-wrap{
+  position:relative;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+/* 视频元素 */
+.video-wrap video,
+.video-wrap iframe{
   position:absolute;
   top:0;
   left:0;
   width:100%;
   height:100%;
+  border:none;
   object-fit:contain;
 }
 
@@ -326,6 +349,7 @@ footer a,
   
   .video-wrap{
     margin:12px auto 20px;
+    max-width:95%;
   }
 
   h2{
@@ -356,5 +380,6 @@ footer a,
 
   .video-wrap{
     margin:10px auto 15px;
+    max-width:100%;
   }
 }
