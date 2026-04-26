@@ -147,7 +147,7 @@ h1{
   text-align:center;
   font-size:46px;
   color:var(--primary-dark);
-  margin-bottom:25px;
+  margin-bottom:15px;
   line-height:1.2;
 }
 
@@ -156,7 +156,8 @@ h1 .video-en{
   display:block;
   font-size:24px;
   color:var(--text-medium);
-  margin-top:10px;
+  margin-top:8px;
+  margin-bottom:0;
   font-weight:normal;
 }
 
@@ -189,7 +190,7 @@ p{
   position:relative;
   width:100%;
   max-width:800px;
-  margin:0 auto 30px;
+  margin:20px auto 30px;
   padding-top:56.25%; /* 16:9 比例 */
   overflow:hidden;
   border-radius:12px;
@@ -222,7 +223,7 @@ p{
   text-align: center;
 }
 
-/* ✅ 关键：把“这类链接区域里的 a”变成按钮卡片 */
+/* ✅ 关键：把"这类链接区域里的 a"变成按钮卡片 */
 .link-list a,
 #quick-links a,
 .quick-links a,
@@ -310,14 +311,50 @@ footer a,
 
   .container{
     margin:20px;
-    padding:40px 20px;
+    padding:30px 20px;
   }
 
   h1{
-    font-size:32px;
+    font-size:28px;
+    margin-bottom:10px;
+  }
+
+  h1 .video-en{
+    font-size:18px;
+    margin-top:6px;
   }
   
   .video-wrap{
-    max-width:100%;
+    margin:12px auto 20px;
+  }
+
+  h2{
+    font-size:18px;
+    margin:20px 0 8px;
+  }
+
+  p{
+    font-size:14px;
+  }
+}
+
+@media (max-width:480px){
+  .container{
+    margin:10px;
+    padding:20px 16px;
+  }
+
+  h1{
+    font-size:22px;
+    margin-bottom:8px;
+  }
+
+  h1 .video-en{
+    font-size:14px;
+    margin-top:4px;
+  }
+
+  .video-wrap{
+    margin:10px auto 15px;
   }
 }
