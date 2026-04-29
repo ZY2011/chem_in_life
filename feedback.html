@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>反馈工单 Feedback Ticket | Chem In Life</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <span class="dot"></span>
+        Chem_In_Life
+      </a>
+
+      <nav class="links">
+        <a href="index.html">首页 Home</a>
+        <a href="video1.html">视频1</a>
+        <a href="video2.html">视频2</a>
+        <a href="video3.html">视频3</a>
+        <a href="video4.html">视频4</a>
+        <a href="video5.html">视频5</a>
+        <a href="video6.html">视频6</a>
+        <a class="active" href="feedback.html">反馈 Feedback</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>
+      反馈工单系统
+      <span class="video-en">Feedback Ticket System</span>
+    </h1>
+
+    <p>
+      如果你发现网站内容错误、视频无法播放、文字不清楚，或希望提出安全教育相关建议，
+      可以通过下面的表单提交反馈。
+    </p>
+
+    <p>
+      If you find content errors, video problems, unclear explanations, or have suggestions for our safety education project,
+      please submit a feedback ticket below.
+    </p>
+
+    <section class="ticket-box">
+      <form class="ticket-form" action="https://formsubmit.co/gan_yuzy@163.com" method="POST">
+        <input type="hidden" name="_subject" value="Chem In Life 新反馈工单">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <label>
+          你的姓名 Name
+          <input type="text" name="name" placeholder="例如小明" required>
+        </label>
+
+        <label>
+          联系方式 Contact
+          <input type="text" name="contact" placeholder="邮箱 / 微信 / 其他联系方式">
+        </label>
+
+        <label>
+          反馈类型 Feedback Type
+          <select name="type" required>
+            <option value="">请选择 Please select</option>
+            <option value="网站错误 Website bug">网站错误 Website bug</option>
+            <option value="视频问题 Video issue">视频问题 Video issue</option>
+            <option value="内容错误 Content mistake">内容错误 Content mistake</option>
+            <option value="安全建议 Safety suggestion">安全建议 Safety suggestion</option>
+            <option value="其他 Other">其他 Other</option>
+          </select>
+        </label>
+
+        <label>
+          问题位置 Problem Location
+          <input type="text" name="location" placeholder="例如 首页 / 视频3 / 高锰酸钾+醋">
+        </label>
+
+        <label>
+          详细描述 Details
+          <textarea name="message" rows="6" placeholder="请详细描述你遇到的问题或建议..." required></textarea>
+        </label>
+
+        <button type="submit">提交工单 Submit Ticket</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Chem_In_Life | IB MYP Community Project</p>
+  </footer>
+</body>
+</html>
